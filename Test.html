@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+    <meta content="telephone=no" name="format-detection">
+    <meta content=
+    "user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"
+    name="viewport">
+	
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+	<link href="assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="assets/css/animate.min.css" rel="stylesheet" />
+	<link href="assets/css/style.min.css" rel="stylesheet" />
+	<link href="assets/css/style-responsive.min.css" rel="stylesheet" />
+	<link href="assets/css/theme/default.css" rel="stylesheet" id="theme" />
+    <link href="assets/plugins/bootstrap-validation/css/bootstrapValidator.css" rel="stylesheet" />
+	<!--<link href="assets/css/awesomplete.css" rel="stylesheet" />-->
+	<!-- ================== END BASE CSS STYLE ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE  wizard================== -->
+	<link href="assets/plugins/bootstrap-wizard/css/bwizard.min.css" rel="stylesheet" />
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+ 
+	
+	<!-- ================== START SELECT PICKER GO================== -->
+	
+	 <link rel="stylesheet" href="assets/selectpicker/css/bootstrap-select_table.css">
+	 <script src="assets/selectpicker/js/bootstrap-select_table.js"></script>
+	 
+	<script src="assets/plugins/bootstrap-select/bootstrap-select1.min.js"></script>
+	<!-- ================== END SELECT PICKER GO================== -->
+	
+	
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE Data tables================== -->
+	<link href="assets/plugins/DataTables/css/data-table.css" rel="stylesheet" />
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL STYLE Form plugin================== -->
+	<link href="assets/plugins/bootstrap-datetimepicker2/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+	<link href="assets/plugins/ionRangeSlider/css/ion.rangeSlider.css" rel="stylesheet" />
+	<link href="assets/plugins/ionRangeSlider/css/ion.rangeSlider.skinNice.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+	<link href="assets/plugins/password-indicator/css/password-indicator.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-combobox/css/bootstrap-combobox.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" />
+	<link href="assets/plugins/jquery-tag-it/css/jquery.tagit.css" rel="stylesheet" />
+	<link rel="assets/LC-switch-master/lc_switch.css" href="lc_switch.css"/>
+	<link rel="css/lc_switch.css" href="lc_switch.css"/>
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+
+	<!-- ================== BEGIN PAGE LEVEL STYLE show or hide column================== -->
+	<link href="assets/plugins/DataTables/css/data-table.css" rel="stylesheet" />
+    <link href="assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
+	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+	<!-- ================== Browse button custom================== -->
+	<link href="assets/plugins/browse-button/filecss.css" rel="stylesheet" />
+	<script src="assets/plugins/jquery/jquery-1.9.1.min.js"></script>
+	<script src="assets/plugins/browse-button/filejs.js"></script>
+	<script src="assets/LC-switch-master/lc_switch.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+  }
+  .lcs_wrap {
+	display: inline-block;	
+	direction: ltr;
+	height: 28px;
+    vertical-align: middle;
+}
+.lcs_wrap input {
+	display: none;	
+}
+
+.lcs_switch {
+	display: inline-block;	
+	position: relative;
+	width: 48px;
+	height: 24px;
+	border-radius: 30px;
+	background: #ddd;
+	overflow: hidden;
+	cursor: pointer;
+	
+	-webkit-transition: all .2s ease-in-out;  
+	-ms-transition: 	all .2s ease-in-out; 
+	transition: 		all .2s ease-in-out; 
+}
+.lcs_cursor {
+	display: inline-block;
+	position: absolute;
+	top: 1px;	
+	width: 22px;
+	height: 22px;
+	border-radius: 100%;
+	background: #fff;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.1);
+	z-index: 10;
+	
+	-webkit-transition: all .2s linear;  
+	-ms-transition: 	all .2s linear; 
+	transition: 		all .2s linear; 
+}
+.lcs_label {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 12px;
+	letter-spacing: 1px;
+	line-height: 18px;
+	color: #fff;
+	font-weight: bold;
+	position: absolute;
+	/*width: 33px;*/
+	top: 4px;
+	overflow: hidden;
+	text-align: center;
+	opacity: 0;
+	
+	-webkit-transition: all .2s ease-in-out .1s;  
+	-ms-transition: 	all .2s ease-in-out .1s;   
+	transition: 		all .2s ease-in-out .1s;   
+}
+.lcs_label.lcs_label_on {
+	left: -70px;
+	z-index: 6;	
+}
+.lcs_label.lcs_label_off {
+	right: -70px;
+	z-index: 5;	
+}
+
+
+/* on */
+.lcs_switch.lcs_on {
+	background: #75b936;
+    box-shadow: 0 0 2px #579022 inset;
+}
+.lcs_switch.lcs_on .lcs_cursor {
+	left: 23px;
+}
+.lcs_switch.lcs_on .lcs_label_on {
+	left: 10px;	
+	opacity: 1;
+}
+
+
+/* off */
+.lcs_switch.lcs_off {
+	background: #b2b2b2;
+	box-shadow: 0px 0px 2px #a4a4a4 inset; 	
+}
+.lcs_switch.lcs_off .lcs_cursor {
+	left: 3px;
+}
+.lcs_switch.lcs_off .lcs_label_off {
+	right: 10px;
+	opacity: 1;	
+}
+
+
+/* disabled */
+.lcs_switch.lcs_disabled {
+	opacity: 0.65;
+	filter: alpha(opacity=65);	
+	cursor: default;
+}
+  </style>
+</head>
+<body>
+<div class="container">
+	
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <a class="col-md-2" href="#myCarousel" role="button" data-slide="prev" onclick="backword()">
+	  <input type="button" class="btn btn-primary" value="Previous">
+	  <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	  <span class="sr-only">Previous</span>-->
+	</a>
+	<div class="col-md-8">
+		<center>
+		    <a class="btn btn-inverse" href="#">
+			<span id='currentLine'>
+			</span>
+		    </a>
+		</center>
+	    </div>
+	    <input type="hidden" id="Linelength1" value="1">
+	<a class="col-md-2" href="#myCarousel" role="button" data-slide="next" style="float: right" onclick="forward()">
+	  <input type="button" class="btn btn-primary" value="Next">
+	  <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	  <span class="sr-only">Next</span>-->
+	</a>
+    <div class="carousel-inner" role="listbox" id="slider">
+        <div class="item hide" id="optionTemplate" data-val="">
+		<div class="row" id="form_validation">
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Building Type</label>
+			    <select class="form-control selectpicker btn-sm" name="ML_BULD_TYPE_NEW" id="ML_BULD_TYPE_NEW" data-live-search="true" data-style="btn-white btn-sm" >
+			        	<option value="">Select</option>
+				</select>
+			</div>
+		    </div>
+		    <div id="buildingDetails1">
+			<div class="col-md-3">
+			    <div class="col-md-12 form-group">
+				<label class="control-label">Building Name</label>
+				<input type="text" class="form-control ML_FLOOR_CLASS input-sm" name="ML_BUILD_NEW" id="ML_BUILD_NEW" value="ML_BUILD" readonly>
+			    </div>
+			</div>
+			<div class="col-md-3">
+			    <div class="col-md-12 form-group">
+				<label class="control-label">Floor Number</label>
+				<input type="text" class="form-control ML_FLOOR_CLASS input-sm" name="ML_FLOOR_NEW" id="ML_FLOOR_NEW" value="ML_FLOOR" readonly>
+			    </div>
+			</div>
+			<div class="col-md-3" id="flat">
+			    <div class="col-md-12 form-group">
+				<label class="control-label">Appartment Number</label>
+				<input type="text" class="form-control ML_FLAT_CLASS input-sm" name="ML_FLAT_NEW" id="ML_FLAT_NEW" value="ML_FLAT" readonly>
+			    </div>
+			</div>
+	    	    </div>
+		</div>
+	<div class="row">
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Room Type</label>
+			    <select class="form-control selectpicker ML_UNIT_CLASS btn-sm" name="ML_UNIT_NEW" id="ML_UNIT_NEW" data-live-search="true" data-style="btn-white" >
+					<option  value="">Select</option>
+				</select>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Room Number</label>
+			    <input type="text" class="form-control input-sm" name="ML_ROOM_NO" id="ML_ROOM_NO" placeholder="Room Number" value="ML_ROOM_NO" readonly>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Window Number</label>
+			    <input type="text" class="form-control input-sm" name="ML_WINDOW_NO" id="ML_WINDOW_NO" placeholder="Window Number" value="ML_WINDOW_NO" readonly>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Mount Type</label>
+			    <select class="form-control selectpicker ML_MOUNT_TYPE_CLASS btn-sm" name="ML_MOUNT_TYPE_NEW" id="ML_MOUNT_TYPE_NEW" data-live-search="true" data-style="btn-white" >
+				  <option  value="">Select</option>
+				</select>
+			</div>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Mount On</label>
+			    <select class="form-control selectpicker ML_MOUNT_ON_CLASS btn-sm" name="ML_MOUNT_ON_NEW" id="ML_MOUNT_ON_NEW" data-live-search="true" data-style="btn-white" >
+					<option  value="">Select</option>
+				</select>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Operation</label>
+			    <select class="form-control selectpicker ML_OPERATE_CLASS btn-sm" name="ML_OPERATE_NEW" id="ML_OPERATE_NEW" data-live-search="true" data-style="btn-white" >
+				<option  value="Manual">Manual</option>
+				<option value="Motorized">Motorized</option>
+			    </select>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Control</label>
+			    <select class="form-control selectpicker btn-sm" name="ML_CONTROL_NEW" id="ML_CONTROL_NEW" data-live-search="true" data-style="btn-white" >
+				<option  value="Left">Left</option>
+				<option value="Right">Right</option>
+			    </select>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Opening</label>
+			    <select class="form-control selectpicker ML_OPENING_CLASS btn-sm" name="ML_OPENING_NEW" id="ML_OPENING_NEW" data-live-search="true" data-style="btn-white" >
+				<option value="Top">Top</option>
+				<option value="Left">Left</option>
+				<option  value="Right">Right</option>
+				<option value="Center">Center</option>
+			    </select>
+			</div>
+		    </div>
+		</div>
+		<div class="row">
+		   <div class="col-md-3">
+				<div class="col-md-12 form-group">
+				<label class="control-label">Pelmet</label>
+					<div class="checkbox">
+			   			<input class="lcs_check" id="elementYN" type="checkbox">
+				        <input class="headUpdateYN" type="hidden" id="CM_ACTIVE_YN" name="CM_ACTIVE_YN" value="" onchange="swicherryrefresh($(this))">
+					</div>
+		    	</div>
+			</div>
+		<div class="row">
+		    <div  class="hideline">
+			<div class="col-md-3" id="ML_PROJECTION_NEW">
+			    <div class="col-md-12 form-group">
+				<label class="control-label">Projection</label>
+				<input type="text" class="form-control ML_PROJECTION_CLASS input-sm" name="ML_PROJECTION_NEW" value="ML_PROJECTION" id="ML_PROJECTION_NEW1" readonly>
+			    </div>
+			</div>
+			<div class="col-md-3" id="ML_FASICA_NEW" >
+			    <div class="col-md-12 form-group">
+				<label class="control-label">Fasica</label>
+				<input type="text" class="form-control ML_FASICA_CLASS input-sm" name="ML_FASICA_NEW" value="ML_FASCIA" id="ML_FASICA_NEW1" readonly>
+			    </div>
+			</div>
+		    </div>
+		</div>
+		</div>
+		<div class="row">
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Window Width</label>
+			    <input type="text" class="form-control input-sm" name="ML_WIDTH_NEW" id="ML_WIDTH_NEW" value="ML_WIDTH" readonly>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Window Height</label>
+			    <input type="text" class="form-control input-sm" name="ML_HEIGHT_NEW" id="ML_HEIGHT_NEW" value="ML_HEIGHT" readonly>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Wall Width</label>
+			    <input type="text" class="form-control input-sm" name="ML_FULL_WIDTH_NEW" id="ML_FULL_WIDTH_NEW" value="ML_FULL_WIDTH" readonly>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Wall Height</label>
+			    <input type="text" class="form-control input-sm" name="ML_FULL_HEIGHT_NEW" id="ML_FULL_HEIGHT" value="ML_FULL_HEIGHT" readonly>
+			</div>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Wall to Left</label>
+			    <input type="text" class="form-control input-sm" name="ML_LEFT_WALL_NEW" id="ML_LEFT_WALL_NEW" value="ML_LEFT_WALL" readonly>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Wall to Right</label>
+			    <input type="text" class="form-control input-sm" name="ML_RIGHT_WALL_NEW" id="ML_RIGHT_WALL_NEW" value="ML_RIGHT_WALL" readonly>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Up to Ceiling</label>
+			    <input type="text" class="form-control input-sm" name="ML_CEILING_UP_NEW" id="ML_CEILING_UP_NEW" value="ML_CEILING_UP" readonly>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Down to Floor</label>
+			    <input type="text" class="form-control input-sm" name="ML_FLOOR_DOWN_NEW" id="ML_FLOOR_DOWN_NEW" value="ML_FLOOR_DOWN" readonly>
+			</div>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Window Depth</label>
+			    <input type="text" class="form-control input-sm" name="ML_WINDOW_DEPTH_NEW" id="ML_WINDOW_DEPTH_NEW" value="ML_WINDOW_DEPTH" readonly>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Window Opening</label>
+			    <select class="form-control selectpicker btn-sm" name="ML_WINDOW_OPENING_NEW" id="ML_WINDOW_OPENING_NEW" data-live-search="true" data-style="btn-white btn-sm" >
+				<option selected value="">Select</option>
+				</select>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Handle Position</label>
+			    <select class="form-control selectpicker btn-sm" name="ML_HANDLE_POSITION_NEW" id="ML_HANDLE_POSITION_NEW" data-live-search="true" data-style="btn-white btn-sm" >
+					<option  value="">Select</option>
+				</select>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Handle Size</label>
+			    <input type="text" class="form-control input-sm" name="ML_HANDLE_SIZE_NEW" id="ML_HANDLE_SIZE_NEW" value="ML_HANDLE_SIZE" readonly>
+			</div>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Power Distance</label>
+			    <input type="text" class="form-control input-sm" name="ML_POWER_DISTANCE_NEW" id="ML_POWER_DISTANCE_NEW" value="ML_POWER_DISTANCE" readonly>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<div class="col-md-12 form-group">
+			    <label class="control-label">Remarks</label>
+			    <input type="text" class="form-control ML_REMARKS_CLASS input-sm" name="ML_REMARKS_NEW" id="ML_REMARKS_NEW" value="ML_REMARKS" readonly>
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<section class="col-md-12 form-group">
+			    <label class="control-label">Gypsum Yes/No</label>
+			    	<div class="checkbox">
+			   			<input class="lcs_check" id="elementYN1" type="checkbox">
+				        <input class="headUpdateYN" type="hidden" id="CM_ACTIVE_YN1" name="CM_ACTIVE_YN" value="" onchange="swicherryrefresh1($(this))">
+				</div>		    
+			</section>
+		    </div>
+		    <div class="col-md-3" id="ML_GYPSUM_WIDTH_NEW">
+			<div class="col-md-12 form-group gypsumDetail">
+			    <label class="control-label">Gypsum Width</label>
+			    <input type="text" class="form-control input-sm" onblur="$(this).formatCurrency();" name="ML_GYPSUM_WIDTH_NEW" value="ML_GYPSUM_WIDTH" id="ML_GYPSUM_WIDTH_NEW1" readonly>
+			</div>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-3" id="ML_GYPSUM_HEIGHT_NEW">
+			<div class="col-md-12 form-group gypsumDetail">
+			    <label class="control-label">Gypsum Height</label>
+			    <input type="text" class="form-control input-sm" onblur="$(this).formatCurrency();" name="ML_GYPSUM_HEIGHT_NEW" value="ML_GYPSUM_HEIGHT" id="ML_GYPSUM_HEIGHT_NEW1" readonly>
+			</div>
+		    </div>
+		    <div class="col-md-3" id="ML_GYPSUM_DEPTH_NEW">
+			<div class="col-md-12 form-group gypsumDetail ">
+			    <label class="control-label">Gypsum Depth</label>
+			    <input type="text" class="form-control input-sm" onblur="$(this).formatCurrency();" name="ML_GYPSUM_DEPTH_NEW" value="ML_GYPSUM_DEPTH" id="ML_GYPSUM_DEPTH_NEW1" readonly>
+			</div>
+		    </div>
+		</div>
+		<input type="hidden" name="ML_SYS_ID_NEW" value="ML_SYS_ID" readonly>
+		<div class="row" class="MeasurementImageEdit">
+			<div class="col-md-12 odd_file" id="MI_SYS_ID_IMG">
+				
+				<input type="hidden" name='MI_SYS_ID' value="MI_SYS_ID"  readonly>
+				<input type="hidden" name='length' value="MI_SYS_ID">
+			</div>
+		
+		<div>
+		    <button type="button "class="AddMeasurement btn btn-sm btn-primary test hide" onclick="AddMeasurement(this)">add<input class="CurrentLineId" type="button" value=""></button>
+		</div>
+		    
+		<div>
+		    <button type="button" class="AddMeasurement btn btn-sm btn-primary test hide" onclick="AddMeasurement(this)">add<input class="CurrentLineId" type="hidden" value='ML_SYS_ID'></button>
+		</div>
+		</div>
+		
+    </div>
+
+    <!-- Left and right controls -->
+   
+  </div>
+</div>
+<script>
+  $(function() {
+    $('.carousel').each(function(){
+        $(this).carousel({
+            interval: false
+        });
+    });
+});
+
+  
+  
+</script>
+<script type="text/javascript">
+$( document ).ready(function() {
+	 $('.lcs_check').lc_switch('Y','N');
+	    $('.lcs_check').lc_switch();
+});
+$( document ).ready(function() {
+SelectLocalLinesValues();
+function SelectLocalLinesValues(){
+	  var db = window.openDatabase("Spine", "1.0", "Spine Demo", 100*1024*1024);
+	  db.transaction(Local_Measure_Line, errorCB);
+	  function Local_Measure_Line(tx) {
+	   tx.executeSql('SELECT * FROM LOGI_T_MEASURE_LINES', [], function (tx, results) {
+	    var Linelength = results.rows.length;
+	    //alert("multiple Line -->"+Linelength);
+	    $('#currentLine').append(Linelength);
+	    $("#currentLine").html('1/'+Linelength);
+	    $('#Linelength1').val(Linelength);
+		$('#length').val(Linelength);
+	    var j= 0;
+		for (var i = 0; i < Linelength; i++){
+	    j++;	
+	    var $template = $('#optionTemplate'),
+		$clone    = $template.clone().removeClass('hide').removeAttr('id').attr('data-val',j).insertBefore($template);
+		$bld=results.rows.item(i).ML_BULD_TYPE;
+		build($clone,$bld);
+		$room=results.rows.item(i).ML_UNIT;
+		room_type($clone,$room);
+		$mountT=results.rows.item(i).ML_MOUNT_TYPE;
+		mount_Type($clone,$mountT);
+		$mount=results.rows.item(i).ML_MOUNT_ON;
+		mount_On($clone,$mount);
+		$Win=results.rows.item(i).ML_WINDOW_OPENING;
+		Win_Open($clone,$Win);
+		$handle=results.rows.item(i).ML_HANDLE_POSITION;
+		handleposition($clone,$handle);
+		$sysid=results.rows.item(i).SYS_ID;
+		$syslineid=results.rows.item(i).SYS_LINE_ID;
+		imgSelect($clone,$sysid,$syslineid);
+		swicherryrefresh($clone);
+		swicherryrefresh1($clone);
+		//document.getElementById("#ML_BULD_TYPE_NEW").value = results.rows.item(i).ML_BULD_TYPE;
+		   if(results.rows.item(i).ML_PELMET=='No'){
+			   $clone.find('#ML_FASICA_NEW').hide();
+			   $clone.find('#ML_PROJECTION_NEW').hide();
+			}else{
+				$clone.find( "#elementYN" ).lcs_on();
+				$clone.find('#ML_FASICA_NEW').show();
+				$clone.find('#ML_PROJECTION_NEW').show(); 
+				}
+		   if(results.rows.item(i).ML_GYPSUM_YN=='N'){
+			   $clone.find( "#elementYN1" ).lcs_off();
+			   $clone.find('#ML_GYPSUM_WIDTH_NEW').hide();
+			   $clone.find('#ML_GYPSUM_HEIGHT_NEW').hide();
+			   $clone.find('#ML_GYPSUM_DEPTH_NEW').hide();
+			   
+			}else{
+				$clone.find( "#elementYN1" ).lcs_on();
+				$clone.find('#ML_GYPSUM_WIDTH_NEW').show();
+				$clone.find('#ML_GYPSUM_HEIGHT_NEW').show();
+				$clone.find('#ML_GYPSUM_DEPTH_NEW').show();
+				}
+		$clone.find('#ML_WINDOW_NO').val(results.rows.item(i).ML_WINDOW_NO);
+		$clone.find('#ML_BUILD_NEW').val(results.rows.item(i).ML_BUILD);
+		$clone.find('#ML_FLOOR_NEW').val(results.rows.item(i).ML_FLOOR);
+		$clone.find('#ML_FLAT_NEW').val(results.rows.item(i).ML_FLAT);
+		$clone.find('#ML_WINDOW_DEPTH_NEW').val(results.rows.item(i).ML_WINDOW_DEPTH);
+		$clone.find('#ML_POWER_DISTANCE_NEW').val(results.rows.item(i).ML_POWER_DISTANCE);
+		$clone.find('#ML_GYPSUM_WIDTH_NEW1').val(results.rows.item(i).ML_GYPSUM_WIDTH);
+		$clone.find('#ML_GYPSUM_HEIGHT_NEW1').val(results.rows.item(i).ML_GYPSUM_HEIGHT);
+		$clone.find('#ML_LEFT_WALL_NEW').val(results.rows.item(i).ML_LEFT_WALL);
+		$clone.find('#ML_RIGHT_WALL_NEW').val(results.rows.item(i).ML_RIGHT_WALL );
+		$clone.find('#ML_CEILING_UP_NEW').val(results.rows.item(i).ML_CEILING_UP );
+		$clone.find('#ML_HANDLE_SIZE_NEW').val(results.rows.item(i).ML_HANDLE_SIZE);
+		$clone.find('#ML_FLOOR_DOWN_NEW').val(results.rows.item(i).ML_FLOOR_DOWN);
+		$clone.find('#ML_GYPSUM_DEPTH_NEW1').val(results.rows.item(i).ML_GYPSUM_DEPTH);
+		$clone.find('#ML_ROOM_NO').val(results.rows.item(i).ML_ROOM_NO);
+		$clone.find('#ML_OPERATE_NEW').val(results.rows.item(i).ML_OPERATE);
+		$clone.find('#ML_CONTROL_NEW').val(results.rows.item(i).ML_CONTROL);
+		$clone.find('#ML_OPENING_NEW').val(results.rows.item(i).ML_OPENING);
+		$clone.find('#ML_PELMET_NEW').val(results.rows.item(i).ML_BUILD);
+		$clone.find('#ML_PROJECTION_NEW1').val(results.rows.item(i).ML_PROJECTION);
+		$clone.find('#ML_FASICA_NEW1').val(results.rows.item(i).ML_FASICA);
+		$clone.find('#ML_WIDTH_NEW').val(results.rows.item(i).ML_WIDTH);
+		$clone.find('#ML_HEIGHT_NEW').val(results.rows.item(i).ML_HEIGHT);
+		$clone.find('#ML_FULL_WIDTH_NEW').val(results.rows.item(i).ML_FULL_WIDTH);
+		$clone.find('#ML_FULL_HEIGHT').val(results.rows.item(i).ML_FULL_HEIGHT);
+		$clone.find('#ML_LEFT_WALL').val(results.rows.item(i).ML_LEFT_WALL);
+		$clone.find('#ML_RIGHT_WALL').val(results.rows.item(i).ML_RIGHT_WALL);
+		$clone.find('#ML_CEILING_UP').val(results.rows.item(i).ML_CEILING_UP);
+		$clone.find('#ML_FLOOR_DOWN').val(results.rows.item(i).ML_FLOOR_DOWN);
+		$clone.find('#ML_WINDOW_DEPTH').val(results.rows.item(i).ML_WINDOW_DEPTH);
+		$clone.find('#ML_WINDOW_OPENING_NEW').val(results.rows.item(i).ML_WINDOW_OPENING);
+		$clone.find('#ML_HANDLE_SIZE').val(results.rows.item(i).ML_HANDLE_SIZE);
+		$clone.find('#ML_POWER_DISTANCE').val(results.rows.item(i).ML_POWER_DISTANCE);
+		$clone.find('#ML_REMARKS_NEW').val(results.rows.item(i).ML_REMARKS);
+		$clone.find('#ML_GYPSUM_YN').val(results.rows.item(i).ML_GYPSUM_YN);
+		$clone.find('#ML_GYPSUM_WIDTH').val(results.rows.item(i).ML_GYPSUM_WIDTH);
+		$clone.find('#ML_GYPSUM_HEIGHT').val(results.rows.item(i).ML_GYPSUM_HEIGHT);
+		$clone.find('#ML_GYPSUM_DEPTH').val(results.rows.item(i).ML_GYPSUM_DEPTH);
+		//$clone.find('#MI_SYS_ID').attr('src',results.rows.item(i).SYS_ID);
+	     }
+	     function build($clone,$bld) {
+			var db = window.openDatabase("Spine", "1.0", "Spine Demo", 100 * 1024 * 1024);
+			db.transaction(BuildType, errorCB);
+			function BuildType(tx) {
+			       tx.executeSql('SELECT * FROM BUILD_TYPE ', [], function (tx, results) {
+				       var BuildType_len = results.rows.length;			       
+				       $("#BuildType").ready(function () {
+					       for (var i = 0; i < BuildType_len; i++) {
+							$clone.find('#ML_BULD_TYPE_NEW').append('<option value="'+results.rows.item(i).VSL_CODE+'">'+results.rows.item(i).VSL_DESC+'</option>');
+					       }
+					       $clone.find('#ML_BULD_TYPE_NEW option[value="' + $bld + '"]').prop("selected", true);
+					 	});
+				   });
+			}
+			function errorCB(tx, err) {
+			//alert("Error");
+			//alert("Error processing SQL: "+err);
+			} 
+		}
+	     function room_type($clone,$room) {
+			var db = window.openDatabase("Spine", "1.0", "Spine Demo", 100 * 1024 * 1024);
+			 db.transaction(UnitType, errorCB);                        
+
+				function UnitType(tx) {
+				       tx.executeSql('SELECT * FROM UNIT_TYPE ', [], function (tx, results) {
+					       var UnitType_len = results.rows.length;
+				       //	alert("UnitType_len-"+UnitType_len);
+					       $("#UnitType").ready(function () {
+						       for (var i = 0; i < UnitType_len; i++) {
+							       $clone.find('#ML_UNIT_NEW').append('<option value="'+results.rows.item(i).VSL_CODE+'">'+results.rows.item(i).VSL_DESC+'</option>');
+				           }
+						       $clone.find('#ML_UNIT_NEW option[value="' + $room + '"]').prop("selected", true);
+					       });
+				       });
+				}
+				function errorCB(tx, err) {
+					//alert("Error");
+					//alert("Error processing SQL: "+err);
+					} 
+			}
+	       
+	     function mount_Type($clone,$mountT){
+	    	 var db = window.openDatabase("Spine", "1.0", "Spine Demo", 100 * 1024 * 1024);
+			 db.transaction(MountType, errorCB);                        
+
+			 function MountType(tx) {
+			 	tx.executeSql('SELECT * FROM MOUNT_TYPE ', [], function (tx, results) {
+			 		var MountType_len = results.rows.length;
+			 	//	alert("MountType_len-"+MountType_len);
+			 		$("#MountType").ready(function () {
+			             for (var i = 0; i < MountType_len; i++) {
+			                $clone.find('#ML_MOUNT_TYPE_NEW').append('<option value="'+results.rows.item(i).VSL_CODE+'">'+results.rows.item(i).VSL_DESC+'</option>');
+			             }
+			             $clone.find('#ML_MOUNT_TYPE_NEW option[value="' + $mountT + '"]').prop("selected", true);
+			 		});
+			 	});
+			 }
+			 function errorCB(tx, err) {
+					//alert("Error");
+					//alert("Error processing SQL: "+err);
+					} 
+	     }
+	     function 	mount_On($clone,$mount){
+	    	 var db = window.openDatabase("Spine", "1.0", "Spine Demo", 100 * 1024 * 1024);
+			  db.transaction(MountOn, errorCB);                        
+
+				function MountOn(tx) {
+				       tx.executeSql('SELECT * FROM MOUNT_ON ', [], function (tx, results) {
+					       var MountOn_len = results.rows.length;
+					       $("#MountOn").ready(function () {
+						       for (var i = 0; i < MountOn_len; i++) {
+							       $clone.find('#ML_MOUNT_ON_NEW').append('<option value="'+results.rows.item(i).VSL_CODE+'">'+results.rows.item(i).VSL_DESC+'</option>');
+					    }
+						       $clone.find('#ML_MOUNT_ON_NEW option[value="' + $mount + '"]').prop("selected", true);
+					       });
+				       });
+				}
+			 function errorCB(tx, err) {
+					//alert("Error");
+					//alert("Error processing SQL: "+err);
+					} 
+	     }
+	     function Win_Open($clone,$Win){
+	    	 var db = window.openDatabase("Spine", "1.0", "Spine Demo", 100 * 1024 * 1024);
+			 db.transaction(WinOpen, errorCB);
+			 function WinOpen(tx) {
+			 	tx.executeSql('SELECT * FROM WINOPEN_TYPE ', [], function (tx, results) {
+			 		var winopen_len = results.rows.length;
+			 		$("#WinOpenType").ready(function () {
+				 		for (var i = 0; i < winopen_len; i++) {
+			                $clone.find('#ML_WINDOW_OPENING_NEW').append('<option value="'+results.rows.item(i).VSL_CODE+'">'+results.rows.item(i).VSL_DESC+'</option>');
+			            }
+				 		$clone.find('#ML_WINDOW_OPENING_NEW option[value="' + $Win + '"]').prop("selected", true);
+				 	});
+			 	});
+			 }
+			 function errorCB(tx, err) {
+					//alert("Error");
+					//alert("Error processing SQL: "+err);
+					} 
+	     }
+	     function handleposition($clone,$handle){
+	    	 var db = window.openDatabase("Spine", "1.0", "Spine Demo", 100 * 1024 * 1024);
+			db.transaction(HandleType, errorCB);
+			function HandleType(tx) {
+			       tx.executeSql('SELECT * FROM HANDLE_TYPE ', [], function (tx, results) {
+				       var handle_len = results.rows.length;
+				       $("#HandlePositionType").ready(function () {
+					       for (var i = 0; i < handle_len; i++) {
+				       $clone.find('#ML_HANDLE_POSITION_NEW').append('<option value="'+results.rows.item(i).VSL_CODE+'">'+results.rows.item(i).VSL_DESC+'</option>');
+				   }
+					       $clone.find('#ML_HANDLE_POSITION_NEW option[value="' + $handle + '"]').prop("selected", true);
+				       });
+			       });
+			}
+			  
+			 function errorCB(tx, err) {
+					//alert("Error");
+					//alert("Error processing SQL: "+err);
+					} 
+	     }
+	     function imgSelect($clone,$sysid,$syslineid){
+	    	 //alert("$sysid-->"+$sysid);alert("$syslineid->"+$syslineid);
+			var db = window.openDatabase("Spine", "1.0", "Spine Demo", 100 * 1024 * 1024);
+			db.transaction(Local_Measure_Image12, errorCB);
+			function Local_Measure_Image12(tx) {
+				tx.executeSql('SELECT * FROM LOGI_T_MEASURE_IMAGES WHERE  SYS_ID = ? AND SYS_LINE_ID = ?', [$sysid,$syslineid], function (tx, results) {
+					var ImageLength = results.rows.length;
+					for (var i=0; i <ImageLength; i++){
+						$clone.find('#MI_SYS_ID_IMG').append('<div class="form-group"><div class="col-md-4" ><img src="'+results.rows.item(i).IMG_PATH+'" style="width:150px;height:50px"/></div></div>');
+					}	
+				});
+			}
+			function errorCB(tx, err) {
+				//alert("Error");
+				//alert("Error processing SQL: "+err);
+			} 
+		}
+	   });
+	}
+	  function errorCB(tx, err) {
+	    alert("Test Error Execute ");
+	    alert("Error processing SQL: "+err);
+	  }
+	 }
+        
+ 	});
+	 $( window ).load(function($clone) {
+		$( '.carousel-inner .item:nth-child(1)' ).addClass( 'active' );
+		$('#optionTemplate').removeClass('item');
+	 });
+	 function swicherryrefresh($clone){
+			$('.lcs_wrap').delegate('#elementYN', 'lcs-on', function() {
+				$clone.find('#CM_ACTIVE_YN').val('Y');
+				$clone.find('#ML_FASICA_NEW').show();
+				$clone.find('#ML_PROJECTION_NEW').show(); 
+			});
+			$('.lcs_wrap').delegate('#elementYN', 'lcs-off', function() {
+				$clone.find('#CM_ACTIVE_YN').val('N');
+				 $clone.find('#ML_FASICA_NEW').hide();
+				 $clone.find('#ML_PROJECTION_NEW').hide();
+			});
+		 }
+	 function swicherryrefresh1($clone){
+			$('.lcs_wrap').delegate('#elementYN1', 'lcs-on', function() {
+				$clone.find('#CM_ACTIVE_YN1').val('Y');
+				$clone.find('#ML_GYPSUM_WIDTH_NEW').show();
+				$clone.find('#ML_GYPSUM_HEIGHT_NEW').show();
+				$clone.find('#ML_GYPSUM_DEPTH_NEW').show();
+			});
+			$('.lcs_wrap').delegate('#elementYN1', 'lcs-off', function() {
+				   $clone.find('#CM_ACTIVE_YN1').val('N');
+				   $clone.find('#ML_GYPSUM_WIDTH_NEW').hide();
+				   $clone.find('#ML_GYPSUM_HEIGHT_NEW').hide();
+				   $clone.find('#ML_GYPSUM_DEPTH_NEW').hide();
+			});
+		 }
+	 
+		$('#myCarousel').bind('slid.bs.carousel', function (e) {
+		    alert("Test Click view");
+			$("#currentLine").html($("#myCarousel .active").attr('data-val')+'/'+$('#Linelength1').val());
+		});
+</script>
+	<script src="http://cdn.jagansindia.in/webrupee" type="text/javascript"></script>
+	<script src="assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+	<script src="assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/plugins/bootstrap-validation/js/bootstrapValidator.js"></script>
+	<!--Dashboard Start-->
+	<script src="assets/js/dashboard.min.js"></script>
+	<script src="assets/plugins/flot/jquery.flot.min.js"></script>
+	<script src="assets/plugins/sparkline/jquery.sparkline.js"></script>
+	<!--Dashboard End-->
+
+	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+        
+	<!--====================== MOMENT JS INCLUDE START ===============-->
+	<script src="assets/plugins/moment/moment.min.js"></script>
+	<!--====================== MOMENT JS INCLUDE END ===============-->
+	
+	<!-- ================== START EXPORT================== -->
+	<script type="text/javascript" src="assets/plugins/export/tableExport.js"></script>
+    <script type="text/javascript" src="assets/plugins/export/jquery.base64.js"></script>
+	<script type="text/javascript" src="assets/plugins/export/jspdf/libs/sprintf.js"></script>
+	<script type="text/javascript" src="assets/plugins/export/jspdf/jspdf.js"></script>
+	<script type="text/javascript" src="assets/plugins/export/jspdf/libs/base64.js"></script>
+	<!-- ================== END EXPORT================== -->
+
+	
+	<!-- ================== END BASE JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS Data tables================== -->
+	
+	
+	<script src="assets/plugins/DataTables/js/jquery.dataTables.js"></script>
+	<script src="assets/plugins/DataTables/js/dataTables.responsive.js"></script>
+	<script src="assets/js/table-manage-responsive.demo.min.js"></script>
+	
+	
+        <!-- ================== END PAGE LEVEL JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS Form plugin================== -->
+	<script src="assets/plugins/bootstrap-datetimepicker2/js/moment-with-locales.js"></script>
+	<script src="assets/plugins/bootstrap-datetimepicker2/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="assets/plugins/ionRangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+	<script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+	<script src="assets/plugins/masked-input/masked-input.min.js"></script>
+	<script src="assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+	<script src="assets/plugins/password-indicator/js/password-indicator.js"></script>
+	<script src="assets/plugins/bootstrap-combobox/js/bootstrap-combobox.js"></script>
+	<script src="assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+	<script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+	<script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput-typeahead.js"></script>
+	<script src="assets/plugins/jquery-tag-it/js/tag-it.min.js"></script>
+	<script src="assets/js/form-plugins.demo.min.js"></script>
+	<script src="assets/js/apps.min.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL JS hide column================== -->
+	<script src="assets/plugins/DataTables/js/jquery.dataTables.js"></script>
+	<script src="assets/plugins/DataTables/js/dataTables.autoFill.js"></script>
+	<script src="assets/plugins/DataTables/js/dataTables.colVis.js"></script>
+	<script src="assets/plugins/DataTables/js/dataTables.fixedHeader.js"></script>
+	<script src="assets/plugins/DataTables/js/dataTables.keyTable.js"></script>
+	<script src="assets/plugins/DataTables/js/dataTables.tableTools.js"></script>
+	<script src="assets/js/table-manage-combine.demo.min.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+	
+	<!-- ================== BEGIN PAGE LEVEL JS wizard ================== -->
+
+	<script src="assets/plugins/bootstrap-wizard/js/bwizard.js"></script>
+	<script src="assets/js/form-wizards.demo.min.js"></script>
+	<script src="assets/js/apps.min.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+	<!-- ================== BEGIN PAGE LEVEL Currency Format ================== -->
+	<script type="text/javascript" src="assets/js/jquery.formatCurrency-1.4.0.js"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
+	
+	<!-- ================== Begin formValidation packages================== -->
+	<link href="assets/plugins/formValidation/css/formValidation.css" rel="stylesheet" />
+	<script src="assets/plugins/formValidation/js/formValidation.js"></script>
+	<script src="assets/plugins/formValidation/js/framework/bootstrap.min.js"></script>
+	<!-- ================== End formValidation packages================== -->
+	
+
+		<!-- ================== BEGIN WEBQR JS ================== -->
+			<script src="assets/js/bootbox.min.js"></script>
+			<script type="text/javascript" src="assets/plugins/qrjs/llqrcode.js"></script>
+			<script type="text/javascript" src="assets/plugins/qrjs/webqr.js"></script>
+			<script type="text/javascript" src="assets/plugins/qrjs/plusone.js"></script>
+		<!-- ================== END WEBQR JS ================== -->
+		
+		<!-- =================== BEGIN CORDOVA JS ===================== -->
+	<!-- <script src="js/Schedule.js" type="text/javascript"></script> 
+	-->
+	
+	
+	<!-- <script src="js/login.js" type="text/javascript"></script>
+	<script src="js/app_user.js" type="text/javascript"></script>
+	<script src="js/camera.js" type="text/javascript"></script>
+	<script src="cordova.js" type="text/javascript"></script>
+	<script src="js/Measure.js" type="text/javascript"></script>
+	<script src="js/OfflineMeasurementValues.js" type="text/javascript"></script>
+	<script src="js/OnlineMeasurementValues.js" type="text/javascript"></script>
+	<script src="js/Local2ServerConnection.js" type="text/javascript"></script> -->
+	
+	<!-- =================== END CORDOVA JS ===================== -->
+</body>
+</html>
